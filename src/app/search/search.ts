@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 // import {ChangeDetectionStrategy} from '@angular/core';
 
 @Component({
-  selector: 'app-tab1',
-  templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss'],
+  selector: 'app-search',
+  templateUrl: 'search.page.html',
+  styleUrls: ['search.page.scss'],
   // changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Tab1Page {
+export class SearchPage {
   
   tags = ["Paid", "Looking"];
   icons = ["cash-outline", "search-circle-outline"];
