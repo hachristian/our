@@ -1,0 +1,16 @@
+.button {
+  vertical-align: top;
+  position:absolute;
+  right: 1%;
+  width: 25%;
+}
+
+.div {
+  // height: min-content;
+  height: 100px;; /* or whatever width you want. */
+  max-height: 100px; /* or whatever width you want. */
+  display: inline-block;
+}
+.p {
+  max-width: 100%;
+}
