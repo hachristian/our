@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
   // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchPage {
-  
+
   tags = ["Paid", "Looking"];
   icons = ["cash-outline", "search-circle-outline"];
   names = [];

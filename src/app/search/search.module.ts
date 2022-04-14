@@ -14,7 +14,7 @@ import { SearchPageRoutingModule } from './search-routing.module';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    SearchPageRoutingModule,
+    SearchPageRoutingModule
     // ScrollingModule
   ],
   declarations: [SearchPage]

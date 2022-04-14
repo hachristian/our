@@ -16,19 +16,23 @@ const routes: Routes = [
         loadChildren: () => import('../home/home.module').then(m => m.HomePageModule)
       },
       {
+        path: 'uark',
+        loadChildren: () => import('../uark/uark.module').then( m => m.UarkPageModule)
+      },
+      {
         path: 'profile',
         loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule)
       },
       {
         path: '',
-        redirectTo: '/tabs/search',
+        redirectTo: '/tabs/home',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/search',
+    redirectTo: '/tabs/home',
     pathMatch: 'full'
   }
 ];
