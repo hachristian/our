@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: UarkPage
+  },
+  {
+    path: 'engineering',
+    loadChildren: () => import('./engineering/engineering.module').then( m => m.EngineeringPageModule)
   }
 ];
 
