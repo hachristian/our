@@ -38,9 +38,7 @@
   </ion-list> 
 
   <ion-button color="tertiary" class="search" (click)="search()">Search</ion-button>
-  <p id="1">What is</p>
-  <p id="2">This??</p>
-  
+ 
   <ion-list *ngFor="let name of names; let i = index">
     <ion-item>
       <ion-avatar slot="start">
@@ -48,7 +46,7 @@
       </ion-avatar>
       <ion-label>
         <h3>{{name}}</h3>
-        <p>{{department}}</p>
+        <!-- <p>{{department}}</p> -->
       </ion-label>
     </ion-item>
   </ion-list>

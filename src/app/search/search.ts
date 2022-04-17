@@ -17,16 +17,19 @@ export class SearchPage {
   paid:boolean;
   looking:boolean;
   count:number;
+  searched:boolean;
 
   constructor() {
-    // const items = Array.from({length: 100000}).map((_, i) => `Item #${i}`);
     this.count = 0;
-    this.addNames()
+    this.searched = false;
+    // this.addNames()
   }
 
   search() {
-    document.getElementById("1").innerHTML = this.college;
-    document.getElementById("2").innerHTML = this.department;
+    // document.getElementById("1").innerHTML = this.college;
+    // document.getElementById("2").innerHTML = this.department;
+    this.addNames(this.department)
+    this.searched = true
   }
 
   remove(id: number): void {
@@ -37,16 +40,27 @@ export class SearchPage {
   loadData(event) {
     setTimeout(() => {
       console.log('Done');
-      this.addNames()
+      // this.addNames()
       event.target.complete();
     }, 500);
   }
 
-  addNames() {
-    for (let i = 0; i < 10; i++) {
-      this.names.push("John Doe " + this.count);
-      this.count += 1;
-    }
+  addNames(department: string) {
+    fetch('https://campusdata.uark.edu/apiv2/people/listFS?$filter=((Classifications+eq+%27Faculty%27)+and+(BudgetaryUnit+eq+%27'+department+'%27))&$orderby=firstName+asc')
+    .then(result => result.json())
+    .then((output) => {
+        console.log('Output: ', output);
+        
+        if (this.searched) {
+          this.names = []
+          this.searched = false;
+        }
+        
+        for (let i = 0; i < output.length; i++) {
+          this.names.push(output[i].firstName + " " + output[i].lastName);
+          //  this.names.push(output[i].department)
+        }
+    
+  }).catch(err => console.error(err));
   }
-
 }
