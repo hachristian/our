@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';  
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -8,10 +8,10 @@ import { Router } from '@angular/router';
 })
 export class ProfilePage {
 
-  constructor(private router:Router) {}
+  constructor(private router: Router) {}
 
   signIn() {
-    this.router.navigate(['login']);  
+    this.router.navigate(['profile']);
   }
 
 }
