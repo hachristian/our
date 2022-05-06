@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "uarkour-c0a02": {
+      "hosting": {
+        "app": [
+          "uarkour-c0a02"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "uarkour-c0a02"
+  }
+}

@@ -1,0 +1,41 @@
+<ion-header>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="job">
+    <ion-item>
+      <ion-label position="stacked">Job</ion-label>
+      <ion-input [(ngModel)]="job.job"></ion-input>
+    </ion-item>
+ 
+    <ion-item>
+      <ion-label position="stacked">Professor</ion-label>
+      <ion-textarea [(ngModel)]="job.professor"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">College</ion-label>
+      <ion-textarea [(ngModel)]="job.college"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Department</ion-label>
+      <ion-textarea [(ngModel)]="job.department"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Description</ion-label>
+      <ion-textarea [(ngModel)]="job.description" rows="8"></ion-textarea>
+    </ion-item>
+
+  </div>
+ 
+  <ion-button expand="block" color="success" (click)="updateJob()">
+    <ion-icon name="save" slot="start"></ion-icon>
+    Update
+  </ion-button>
+  <ion-button expand="block" color="danger" (click)="deleteJob()">
+    <ion-icon name="trash" slot="start"></ion-icon>
+    Delete
+  </ion-button>
+</ion-content>
