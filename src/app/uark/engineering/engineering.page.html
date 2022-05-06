@@ -8,16 +8,6 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>About OUR</ion-card-title>
-    </ion-card-header>
-
-    <ion-card-content>
-      Keep close to Nature's heart... and break clear away, once in awhile,
-      and climb a mountain or spend a week in the woods. Wash your spirit clean.
-    </ion-card-content>
-  </ion-card>
 
   <ion-card>
     <ion-card-header>
@@ -26,63 +16,99 @@
 
     <ion-card-content>
       <ion-grid>
-        <ion-row >
-          <ion-col>
+        <ion-row class="ion-align-items-end ion-justify-content-center">
+
+          <ion-col size-xs="12" size-sm="6" size-md="4" size-lg="4" size-xl="3">
             <div class="center">
-              <h1>Computer Science</h1>
-              <p>This will be another brief descritpion or probably just an image.</p>
+              <div><h1>Biological & Agricultural Engineering</h1></div>
+              <div class="icon" ><ion-icon name="bug"></ion-icon></div>
             </div>
-            <ion-button [routerLink]="['/tabs/uark/engineering/cs-professors']" expand="block" size="large">
-              <div>Department 1</div>
+            <ion-button [routerLink]="['/tabs/uark/engineering/baeg']" expand="block" size="large">
+              <h1>View More</h1>
             </ion-button>
           </ion-col>
-          <ion-col>
+
+          <ion-col size-xs="12" size-sm="6" size-md="4" size-lg="4" size-xl="3">
             <div class="center">
-              <h1>Computer Engineering</h1>
-              <p>This will be another brief descritpion or probably just an image.</p>
+              <div><h1>Biomedical Engineering</h1></div>
+              <div class="icon" ><ion-icon name="eyedrop"></ion-icon></div>
             </div>
-            <ion-button expand="block" size="large">
-              <div>Department 2</div>
+            <ion-button [routerLink]="['/tabs/uark/engineering/bmeg']" expand="block" size="large">
+              <h1>View More</h1>
             </ion-button>
           </ion-col>
-          <ion-col>
+
+          <ion-col size-xs="12" size-sm="6" size-md="4" size-lg="4" size-xl="3">
             <div class="center">
-              <h1>Electrical Engineering</h1>
-              <p>This will be another brief descritpion or probably just an image.</p>
+              <div><h1>Chemical Engineering</h1></div>
+              <div class="icon" ><ion-icon name="nuclear"></ion-icon></div>
             </div>
-            <ion-button expand="block" size="large">
-              <div>Department 3</div>
+            <ion-button [routerLink]="['/tabs/uark/engineering/cheg']" expand="block" size="large">
+              <h1>View More</h1>
             </ion-button>
           </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
+
+          <ion-col size-xs="12" size-sm="6" size-md="4" size-lg="4" size-xl="3">
             <div class="center">
-              <h1>Mechanical Engineering</h1>
-              <p>This will be another brief descritpion or probably just an image.</p>
+              <div><h1>Civil Engineering</h1></div>
+              <div class="icon" ><ion-icon name="prism"></ion-icon></div>
             </div>
-            <ion-button expand="block" size="large">
-              <div>Department 4</div>
+            <ion-button [routerLink]="['/tabs/uark/engineering/cveg']" expand="block" size="large">
+              <h1>View More</h1>
             </ion-button>
           </ion-col>
-          <ion-col>
+
+          <ion-col size-xs="12" size-sm="6" size-md="4" size-lg="4" size-xl="3">
             <div class="center">
-              <h1>Data Science</h1>
-              <p>This will be another brief descritpion or probably just an image.</p>
+              <div><h1>Computer Engineering / Science</h1></div>
+              <div class="icon" ><ion-icon name="terminal"></ion-icon></div>
             </div>
-            <ion-button expand="block" size="large">
-              <div>Department 5</div>
+            <ion-button [routerLink]="['/tabs/uark/engineering/csce']" expand="block" size="large">
+              <h1>View More</h1>
             </ion-button>
           </ion-col>
-          <ion-col>
+
+          <ion-col size-xs="12" size-sm="6" size-md="4" size-lg="4" size-xl="3">
             <div class="center">
-              <h1>Data Analytics</h1>
-              <p>This will be another brief descritpion or probably just an image.</p>
+              <div><h1>Data Science</h1></div>
+              <div class="icon" ><ion-icon name="trending-up"></ion-icon></div>
             </div>
-            <ion-button expand="block" size="large">
-              <div>Department 6</div>
+            <ion-button [routerLink]="['/tabs/uark/engineering/dtsc']"expand="block" size="large">
+              <h1>View More</h1>
             </ion-button>
           </ion-col>
+        <!-- </ion-row>
+        <ion-row> -->
+          <ion-col size-xs="12" size-sm="6" size-md="4" size-lg="4" size-xl="3">
+            <div class="center">
+              <div><h1>Electrical Engineering</h1></div>
+              <div class="icon" ><ion-icon name="flash"></ion-icon></div>
+            </div>
+            <ion-button [routerLink]="['/tabs/uark/engineering/eleg']" expand="block" size="large">
+              <h1>View More</h1>
+            </ion-button>
+          </ion-col>
+
+          <ion-col size-xs="12" size-sm="6" size-md="4" size-lg="4" size-xl="3">
+            <div class="center">
+              <div><h1>Industrial Engineering</h1></div>
+              <div class="icon" ><ion-icon name="bar-chart"></ion-icon></div>
+            </div>
+            <ion-button [routerLink]="['/tabs/uark/engineering/ineg']" expand="block" size="large">
+              <h1>View More</h1>
+            </ion-button>
+          </ion-col>
+
+          <ion-col size-xs="12" size-sm="6" size-md="4" size-lg="4" size-xl="3">
+            <div class="center">
+              <div><h1>Mechanical Engineering</h1></div>
+              <div class="icon" ><ion-icon name="build"></ion-icon></div>
+            </div>
+            <ion-button [routerLink]="['/tabs/uark/engineering/meeg']" expand="block" size="large">
+              <h1>View More</h1>
+            </ion-button>
+          </ion-col>
+
         </ion-row>
       </ion-grid>
     </ion-card-content>

@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{name}} {{department}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card >
+    <ion-card-header>
+      <!-- <ion-card-title>{{name}}</ion-card-title> -->
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row class="ion-align-items-end ion-justify-content-center">
+          <ion-col size-xs="12" size-sm="6" size-md="4" size-lg="4" size-xl="3" >
+            <!-- <h1 class="center">{{department}}</h1> -->
+            <div class="center" width="300" height="450">
+              <img  src={{pic}} />
+            </div>
+            <h2 class="left">Email: {{email}}</h2>
+            <h2 class="left">Phone: {{phone}}</h2>
+
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+

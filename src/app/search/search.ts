@@ -1,36 +1,86 @@
-import { Component } from '@angular/core';
-// import {ChangeDetectionStrategy} from '@angular/core';
+/* eslint-disable max-len */
+import { ChangeDetectorRef, Component } from '@angular/core';
+import { AlertController, ModalController } from '@ionic/angular';
+import { DataService, Job } from '../services/data.service';
+import { ModalPage } from '../modal/modal.page';
 
 @Component({
   selector: 'app-search',
   templateUrl: 'search.page.html',
   styleUrls: ['search.page.scss'],
-  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchPage {
 
-  tags = ["Paid", "Looking"];
-  icons = ["cash-outline", "search-circle-outline"];
-  names = [];
-  images = [];
-  college:string;
-  department:string;
-  paid:boolean;
-  looking:boolean;
-  count:number;
-  searched:boolean;
+  tags = ['Paid', 'Looking'];
+  icons = ['cash-outline", "search-circle-outline'];
+  paid: boolean;
+  looking: boolean;
+  college: string;
+  department: string;
+  jobs: Job[] = [];
 
-  constructor() {
-    this.count = 0;
-    this.searched = false;
-    // this.addNames()
+  constructor(private dataService: DataService,  private cd: ChangeDetectorRef, private alertCtrl: AlertController, private modalCtrl: ModalController) {
+    this.dataService.getJobs().subscribe(res => {
+      this.jobs = res;
+      this.cd.detectChanges();
+    });
   }
 
-  search() {
-    // document.getElementById("1").innerHTML = this.college;
-    // document.getElementById("2").innerHTML = this.department;
-    this.addNames(this.department)
-    this.searched = true
+  async addJob() {
+    const alert = await this.alertCtrl.create({
+      header: 'Add Job',
+      inputs: [
+        {
+          name: 'job',
+          placeholder: 'Job',
+          type: 'text'
+        },
+        {
+          name: 'professor',
+          placeholder: 'Professor',
+          type: 'textarea'
+        },
+        {
+          name: 'college',
+          placeholder: 'College',
+          type: 'textarea'
+        },
+        {
+          name: 'department',
+          placeholder: 'department',
+          type: 'textarea'
+        },
+        {
+          name: 'description',
+          placeholder: 'description',
+          type: 'textarea'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel'
+        }, {
+          text: 'Add',
+          handler: res => {
+            this.dataService.addJob({ job: res.job, professor: res.professor, college: res.college, department: res.department, description: res.description});
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+  async openJob(job: Job) {
+    const modal = await this.modalCtrl.create({
+      component: ModalPage,
+      componentProps: { id: job.id },
+      breakpoints: [0, 0.5, 0.8],
+      initialBreakpoint: 0.8
+    });
+
+    await modal.present();
   }
 
   remove(id: number): void {
@@ -41,28 +91,7 @@ export class SearchPage {
   loadData(event) {
     setTimeout(() => {
       console.log('Done');
-      // this.addNames()
       event.target.complete();
     }, 500);
-  }
-
-  addNames(department: string) {
-    fetch('https://campusdata.uark.edu/apiv2/people/listFS?$filter=((Classifications+eq+%27Faculty%27)+and+(BudgetaryUnit+eq+%27'+department+'%27))&$orderby=firstName+asc')
-    .then(result => result.json())
-    .then((output) => {
-        console.log('Output: ', output);
-
-        if (this.searched) {
-          this.names = []
-          this.searched = false;
-        }
-
-        for (let i = 0; i < output.length; i++) {
-          this.names.push(output[i].firstName + " " + output[i].lastName);
-          //  this.names.push(output[i].department)
-          this.images.push("https://campusdata.uark.edu/resources/images/FacultyStaffProfile/"+output[i].image);
-        }
-
-  }).catch(err => console.error(err));
   }
 }
