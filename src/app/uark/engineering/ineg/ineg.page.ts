@@ -8,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class InegPage implements OnInit {
 
   names = [];
+  pagename = [];
   images = [];
+  title = [];
+  department = '';
 
   constructor() {
   }
@@ -25,9 +28,15 @@ export class InegPage implements OnInit {
         console.log('Output: ', output);
         // eslint-disable-next-line @typescript-eslint/prefer-for-of
         for (let i = 0; i < output.length; i++) {
+          this.department = output[0].department;
           this.names.push(output[i].firstName + ' ' + output[i].lastName);
-          //  this.names.push(output[i].department)
-          this.images.push('https://campusdata.uark.edu/resources/images/FacultyStaffProfile/'+output[i].image);
+          this.pagename.push(output[i].firstName.toLowerCase() + output[i].lastName.toLowerCase());
+          if (output[i].imageDirectory === false) {
+            this.images.push('/assets/test.png');
+          }
+          else{
+            this.images.push('https://campusdata.uark.edu/resources/images/FacultyStaffProfile/'+output[i].image);
+          }
         }
     }).catch(err => console.error(err));
   }

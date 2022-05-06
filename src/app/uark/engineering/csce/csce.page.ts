@@ -12,6 +12,7 @@ export class CscePage implements OnInit {
   pagename = [];
   images = [];
   title = [];
+  department = '';
 
   constructor() {
 
@@ -25,15 +26,19 @@ export class CscePage implements OnInit {
     fetch('https://campusdata.uark.edu/apiv2/people/listFS?$filter=((BudgetaryUnit+eq+%27CSCE%27)+and+(Classifications+eq+%27Faculty%27))&amp;$orderby=lastName+asc')
     .then(result => result.json())
     .then((output) => {
-        console.log('Output: ', output);
-        // eslint-disable-next-line @typescript-eslint/prefer-for-of
-        for (let i = 0; i < output.length; i++) {
-          // let lowercaseFirstName: output[i].firstName.charAt(0).toLowerCase();
-          this.names.push(output[i].firstName + ' ' + output[i].lastName);
-          this.pagename.push(output[i].firstName.toLowerCase() + output[i].lastName.toLowerCase());
-          this.title.push(output[i].title);
+      console.log('Output: ', output);
+      // eslint-disable-next-line @typescript-eslint/prefer-for-of
+      for (let i = 0; i < output.length; i++) {
+        this.department = output[0].department;
+        this.names.push(output[i].firstName + ' ' + output[i].lastName);
+        this.pagename.push(output[i].firstName.toLowerCase() + output[i].lastName.toLowerCase());
+        if (output[i].imageDirectory === false) {
+          this.images.push('/assets/test.png');
+        }
+        else{
           this.images.push('https://campusdata.uark.edu/resources/images/FacultyStaffProfile/'+output[i].image);
         }
-    }).catch(err => console.error(err));
+      }
+  }).catch(err => console.error(err));
   }
 }

@@ -35,19 +35,23 @@
     </ion-item>
   </ion-list>
 
-  <ion-button expand="block" color="tertiary" class="search" (click)="search()">Search</ion-button>
+  <ion-button expand="block" color="tertiary" class="search">Search</ion-button>
 
-  <ion-list *ngFor="let name of names; let i = index">
-    <ion-item>
-      <ion-avatar slot="start">
-        <img src={{images[i]}} />
-      </ion-avatar>
+  <ion-list>
+    <ion-item *ngFor="let job of jobs" (click)="openJob(job)">
       <ion-label>
-        <h3>{{name}}</h3>
-        <!-- <p>{{department}}</p> -->
+        <h3>{{job.job}}</h3>
+        <p>{{job.professor}}</p>
+        <!-- {{ job.job }} -->
       </ion-label>
     </ion-item>
   </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addJob()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
   <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
     <ion-infinite-scroll-content
