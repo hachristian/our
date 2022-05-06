@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>UARK</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card >
+    <ion-card-header>
+      <ion-card-title class="center">Biological and Agricultural Professors</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row class="ion-align-items-end ion-justify-content-center">
+          <ion-col size-xs="12" size-sm="6" size-md="4" size-lg="4" size-xl="3" *ngFor="let name of names; let i = index">
+            <div class="center" width="300" height="450">
+              <!-- <h1>{{name}}</h1> -->
+              <img class="image" src={{images[i]}} />
+              <p>This will be another brief descritpion</p>
+
+              <ion-button expand="block" size="large">
+                <div class="name"><h2>{{name}}</h2></div>
+              </ion-button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

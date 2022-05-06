@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CsProfessorsPageRoutingModule } from './cs-professors-routing.module';
+import { BmegPageRoutingModule } from './bmeg-routing.module';
 
-import { CsProfessorsPage } from './cs-professors.page';
+import { BmegPage } from './bmeg.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CsProfessorsPageRoutingModule
+    BmegPageRoutingModule
   ],
-  declarations: [CsProfessorsPage]
+  declarations: [BmegPage]
 })
-export class CsProfessorsPageModule {}
+export class BmegPageModule {}

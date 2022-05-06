@@ -1,0 +1,16 @@
+#button {
+  position: relative;
+  left: 33%;
+}
+
+.center {
+  text-align: center;
+}
+.left {
+  text-align:left;
+}
+.top{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}

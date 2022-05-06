@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
 })
 export class TabsPage {
 
+  myCustomIcon = '';
+
   constructor() {}
 
+  makeIcon() {
+    this.myCustomIcon = '/our/resources/uark-icon.svg';
+  }
 }
