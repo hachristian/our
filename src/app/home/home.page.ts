@@ -7,6 +7,12 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  myCustomIcon = '';
+
   constructor() {}
+
+  makeIcon() {
+    this.myCustomIcon = '/our/resources/uark-icon.svg';
+  }
 
 }

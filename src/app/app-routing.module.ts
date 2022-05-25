@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: 'modal',
-    loadChildren: () => import('./modal/modal.module').then( m => m.ModalPageModule)
+    loadChildren: () => import('./search/modal/modal.module').then( m => m.ModalPageModule)
   },
 ];
 @NgModule({
