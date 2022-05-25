@@ -1,16 +1,37 @@
 .button {
-  vertical-align: top;
   position:absolute;
-  right: 1%;
-  width: 25%;
+  vertical-align: middle;
+  top: 0%;
+  right: 0%;
+  width: 100%;
+  max-width: 25%;
+  --background: #9D2235;
+  white-space: normal;
 }
 
 .div {
-  // height: min-content;
-  height: 100px;; /* or whatever width you want. */
-  max-height: 100px; /* or whatever width you want. */
-  display: inline-block;
+  position: relative;
+  left: 1.5%;
+  width: 98%;
 }
-.p {
-  max-width: 100%;
+
+.span {
+  display:inline-flex;
+  width: 100%;
+}
+
+.header {
+  position: relative;
+  top: 0%;
+  width: 100%;
+  max-width: 74%;
+}
+
+.image {
+  display: inline-block;
+  width: 1%;
+}
+
+ion-title {
+  display: inline-flex;
 }

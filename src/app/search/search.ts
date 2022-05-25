@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { AlertController, ModalController } from '@ionic/angular';
-import { DataService, Job } from '../services/data.service';
-import { ModalPage } from '../modal/modal.page';
+import { DataService, Job } from '../search/services/data.service';
+import { ModalPage } from '../search/modal/modal.page';
 
 @Component({
   selector: 'app-search',
