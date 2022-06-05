@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>{{name}} {{department}}</ion-title>
+    <ion-title>{{name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,21 +11,32 @@
 
   <ion-card >
     <ion-card-header>
-      <!-- <ion-card-title>{{name}}</ion-card-title> -->
+      <ion-card-title>{{name}} {{depShort}}</ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
       <ion-grid>
-        <ion-row class="ion-align-items-end ion-justify-content-center">
-          <ion-col size-xs="12" size-sm="6" size-md="4" size-lg="4" size-xl="3" >
+        <ion-row class="ion-justify-content-center">
+          <ion-col class="col" size-xs="12" size-sm="6" size-md="4" size-lg="4" size-xl="4">
             <!-- <h1 class="center">{{department}}</h1> -->
-            <div class="center" width="300" height="450">
-              <img  src={{pic}} />
+            <div class="div">
+              <img  class="image" src={{pic}} />
+              <h2 class="left">Email: {{email}}</h2>
+              <h2 class="left">Phone: {{phone}}</h2>
             </div>
-            <h2 class="left">Email: {{email}}</h2>
-            <h2 class="left">Phone: {{phone}}</h2>
 
           </ion-col>
+
+          <ion-col class="col" size-xs="12" size-sm="6" size-md="8" size-lg="8" size-xl="8">
+
+            <div>
+              <h1>Reserch Interests</h1>
+              <p>HEREHERHERHEHREHRHERE HERHERHEHREHRHEHERHE</p>
+            </div>
+            <h1>Open Positions</h1>
+            <p>HEREHERHERHEHREHRHERE HERHERHEHREHRHEHERHE</p>
+          </ion-col>
+
         </ion-row>
       </ion-grid>
     </ion-card-content>
