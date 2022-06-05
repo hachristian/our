@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AlexandernelsonPage implements OnInit {
 
   department = '';
+  depShort = '';
   email = '';
   pic = '';
   name = '';
@@ -25,6 +26,7 @@ export class AlexandernelsonPage implements OnInit {
     .then(result => result.json())
     .then((output) => {
         this.department = output[0].department;
+        this.depShort = this.department.split('-')[0];
         this.email = output[0].email;
         this.phone = output[0].phoneNumber;
         this.pic = 'https://campusdata.uark.edu/resources/images/FacultyStaffProfile/'+output[0].image;

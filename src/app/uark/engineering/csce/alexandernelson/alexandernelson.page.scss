@@ -3,7 +3,19 @@
   left: 33%;
 }
 
-.center {
+.col {
+  width: 100%;
+  background-color: purple;
+}
+
+.image {
+  position: relative;
+
+  width: 100%;
+  max-width: 75%;
+}
+
+.div {
   text-align: center;
 }
 .left {
